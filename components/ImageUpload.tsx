@@ -7,7 +7,6 @@ import { IKImage, ImageKitProvider, IKUpload } from "imagekitio-next";
 import { useRef } from "react";
 import { Button } from "./ui/button";
 import { toast } from "@/hooks/use-toast";
-import { title } from "process";
 
 const authenticator = async () => {
   try {
@@ -37,11 +36,23 @@ const {
   },
 } = config;
 
+interface ImageUploadProps {
+  type?: string;
+  accept?: string;
+  placeholder?: string;
+  folder?: string;
+  variant?: string;
+  onFileChange: (filePath: string) => void;
+}
+
 const ImageUpload = ({
   onFileChange,
-}: {
-  onFileChange: (filePath: string) => void;
-}) => {
+  type = "image",
+  accept = "image/*",
+  placeholder = "Upload a File",
+  folder = "uploads",
+  variant = "default",
+}: ImageUploadProps) => {
   const IKUploadRef = useRef(null);
   const [file, setFile] = useState<{ filePath: string } | null>(null);
   const onError = (error: any) => {

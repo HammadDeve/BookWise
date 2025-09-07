@@ -1,11 +1,9 @@
 import NextAuth, { User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { db } from "./database/drizzle";
-import { PgSelectBuilder, PgSelectBase } from "drizzle-orm/pg-core";
 import { users } from "@/database/schema";
 import { eq } from "drizzle-orm";
 import { compare } from "bcryptjs";
-import { use } from "react";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   session: {
