@@ -6,26 +6,26 @@ import localFont from "next/font/local";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 
-// ✅ Fonts are in /public/fonts/ directory
+// ✅ Fonts are in /app/fonts/ directory
 const ibmPlexSons = localFont({
   src: [
     {
-      path: "../public/fonts/IBMPlexSans-Regular.ttf",
+      path: "./fonts/IBMPlexSans-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/IBMPlexSans-Medium.ttf",
+      path: "./fonts/IBMPlexSans-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../public/fonts/IBMPlexSans-SemiBold.ttf",
+      path: "./fonts/IBMPlexSans-SemiBold.ttf",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../public/fonts/IBMPlexSans-Bold.ttf",
+      path: "./fonts/IBMPlexSans-Bold.ttf",
       weight: "700",
       style: "normal",
     },
@@ -35,7 +35,7 @@ const ibmPlexSons = localFont({
 const bebasNeue = localFont({
   src: [
     {
-      path: "../public/fonts/BebasNeue-Regular.ttf",
+      path: "./fonts/BebasNeue-Regular.ttf",
       weight: "400",
       style: "normal",
     },
