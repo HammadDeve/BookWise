@@ -6,22 +6,19 @@ import localFont from "next/font/local";
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 
+// ✅ Fonts must be inside /public/fonts, so we use /fonts/... (no ./)
 const ibmPlexSons = localFont({
   src: [
-    { path: "./fonts/IBMPlexSans-Regular.ttf", weight: "400", style: "normal" },
-    { path: "./fonts/IBMPlexSans-Medium.ttf", weight: "500", style: "normal" },
-    {
-      path: "./fonts/IBMPlexSans-SemiBold.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    { path: "./fonts/IBMPlexSans-Bold.ttf", weight: "700", style: "normal" },
+    { path: "/fonts/IBMPlexSans-Regular.ttf", weight: "400", style: "normal" },
+    { path: "/fonts/IBMPlexSans-Medium.ttf", weight: "500", style: "normal" },
+    { path: "/fonts/IBMPlexSans-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "/fonts/IBMPlexSans-Bold.ttf", weight: "700", style: "normal" },
   ],
 });
 
 const bebasNeue = localFont({
   src: [
-    { path: "./fonts/BebasNeue-Regular.ttf", weight: "400", style: "normal" },
+    { path: "/fonts/BebasNeue-Regular.ttf", weight: "400", style: "normal" },
   ],
   variable: "--bebas-neue",
 });
@@ -47,4 +44,5 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
     </html>
   );
 };
+
 export default RootLayout;
